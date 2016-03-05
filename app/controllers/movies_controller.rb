@@ -80,4 +80,11 @@ class MoviesController < ApplicationController
   def sort_direction
     %w[asc desc].include?(params[:direction]) ?  "asc" : "desc"
   end
+    def sort_column
+     Movie.column_names.include?(params[:sort]) ? params[:sort] : session[:sort]
+  end
+#sort_direction
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  "asc" : "desc"
+  end
 end
