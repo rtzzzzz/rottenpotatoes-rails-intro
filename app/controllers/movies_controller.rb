@@ -62,7 +62,7 @@ class MoviesController < ApplicationController
   end
 
   private
-
+#ratings_filter
   def ratings_filter
     if params[:ratings]
        params[:ratings]
@@ -72,11 +72,11 @@ class MoviesController < ApplicationController
        session[:ratings]
     end
   end
-
+#add sort
   def sort_column
      Movie.column_names.include?(params[:sort]) ? params[:sort] : session[:sort]
   end
-
+#sort_direction
   def sort_direction
     %w[asc desc].include?(params[:direction]) ?  "asc" : "desc"
   end
